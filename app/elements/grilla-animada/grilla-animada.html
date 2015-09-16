@@ -1,0 +1,234 @@
+<!--
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<dom-module id="animated-grid">
+  <link rel="import" type="css" href="../shared.css">
+  <style>
+    :host {
+      display: block;
+      background: #000;
+    }
+
+    .tile {
+      display: inline-block;
+      float: left;
+      vertical-align: top;
+      width: calc(100% / 2);
+      height: calc(100% / 3);
+      @apply(--paper-font-title);
+      @apply(--layout-vertical);
+      @apply(--layout-center-center);
+    }
+
+    .tile.fotos {
+      width: calc(100% / 2);
+      height: calc(100% / 3 * 2);
+    }
+
+    neon-animated-pages,
+    iron-image {
+      width: 100%;
+      height: 100%;
+    }
+
+    .tile.tarifas {
+      position: absolute;
+      top: calc(100% / 3 * 2);
+      left: 0;
+      width: calc(100% / 2);
+      height: calc(100% / 3);
+    }
+
+    .tile.servicios {
+      width: calc(100% / 4);
+      height: calc(100% / 2);
+    }
+
+    .tile.contacto {
+      width: calc(100% / 4);
+      height: calc(100% / 2);
+    }
+
+    .tile.mapa {
+      display: none;
+      position: absolute;
+      left: calc(100% / 2);
+      top: calc(100% / 2);
+      width: calc(100% / 2);
+      height: calc(100% / 2);
+    }
+
+    .tile.mapa google-map {
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+
+  <template>
+
+
+    <div class="tile fotos">
+      <neon-animated-pages id="fotos" selected="0" entry-animation="slide-from-right-animation" exit-animation="slide-left-animation">
+        <neon-animatable>
+          <iron-image src="http://lorempixel.com/800/600/nature/1" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
+        </neon-animatable>
+        <neon-animatable>
+          <iron-image src="http://lorempixel.com/800/600/nature/2" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
+        </neon-animatable>
+        <neon-animatable>
+          <iron-image src="http://lorempixel.com/800/600/nature/3" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
+        </neon-animatable>
+        <neon-animatable>
+          <iron-image src="http://lorempixel.com/800/600/nature/4" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
+        </neon-animatable>
+        <neon-animatable>
+          <iron-image src="http://lorempixel.com/800/600/nature/5" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
+        </neon-animatable>
+      </neon-animated-pages>
+    </div>
+    <div class="tile tarifas">
+      <neon-animated-pages id="tarifas" selected="0" entry-animation="slide-from-right-animation" exit-animation="slide-left-animation">
+        <neon-animatable>
+          <iron-image src="http://lorempixel.com/800/600/people/1" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
+        </neon-animatable>
+        <neon-animatable>
+          <iron-image src="http://lorempixel.com/800/600/people/2" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
+        </neon-animatable>
+        <neon-animatable>
+          <iron-image src="http://lorempixel.com/800/600/people/3" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
+        </neon-animatable>
+        <neon-animatable>
+          <iron-image src="http://lorempixel.com/800/600/people/4" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
+        </neon-animatable>
+        <neon-animatable>
+          <iron-image src="http://lorempixel.com/800/600/people/5" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
+        </neon-animatable>
+      </neon-animated-pages>
+    </div>
+    <div class="tile servicios">
+      <neon-animated-pages id="servicios" selected="0" entry-animation="slide-from-right-animation" exit-animation="slide-left-animation">
+        <neon-animatable>
+          <iron-image src="http://lorempixel.com/800/600/people/1" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
+        </neon-animatable>
+        <neon-animatable>
+          <iron-image src="http://lorempixel.com/800/600/people/2" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
+        </neon-animatable>
+        <neon-animatable>
+          <iron-image src="http://lorempixel.com/800/600/people/3" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
+        </neon-animatable>
+        <neon-animatable>
+          <iron-image src="http://lorempixel.com/800/600/people/4" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
+        </neon-animatable>
+        <neon-animatable>
+          <iron-image src="http://lorempixel.com/800/600/people/5" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
+        </neon-animatable>
+      </neon-animated-pages>
+    </div>
+    <div class="tile contacto">
+      <neon-animated-pages id="contacto" selected="0" entry-animation="slide-from-right-animation" exit-animation="slide-left-animation">
+        <neon-animatable>
+          <iron-image src="http://lorempixel.com/800/600/people/1" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
+        </neon-animatable>
+        <neon-animatable>
+          <iron-image src="http://lorempixel.com/800/600/people/2" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
+        </neon-animatable>
+        <neon-animatable>
+          <iron-image src="http://lorempixel.com/800/600/people/3" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
+        </neon-animatable>
+        <neon-animatable>
+          <iron-image src="http://lorempixel.com/800/600/people/4" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
+        </neon-animatable>
+        <neon-animatable>
+          <iron-image src="http://lorempixel.com/800/600/people/5" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
+        </neon-animatable>
+      </neon-animated-pages>
+    </div>
+    <div class="tile mapa">
+      <google-map latitude="-41.9383644" longitude="-71.5352607" fit-to-markers disableDefaultUi="true" zoom="13">
+        <google-map-marker latitude="-41.9383644" longitude="-71.5352607" draggable="false" title="Meridiano 71°"></google-map-marker>
+      </google-map>
+    </div>
+
+  </template>
+
+</dom-module>
+
+<script>
+  Polymer({
+
+    is: 'animated-grid',
+
+    behaviors: [
+      Polymer.NeonSharedElementAnimatableBehavior
+    ],
+
+    properties: {
+
+      animationConfig: {
+        type: Object,
+        value: function() {
+          return {
+            'exit': [{
+              name: 'ripple-animation',
+              id: 'ripple',
+              fromPage: this
+            }, {
+              name: 'hero-animation',
+              id: 'hero',
+              fromPage: this
+            }]
+          }
+        }
+      }
+
+    },
+    ready: function() {
+      var self = this;
+      setInterval(function() {
+        self.$.fotos.selectNext();
+      }, 1500);
+      setInterval(function() {
+        self.$.contacto.selectNext();
+      }, 3000);
+      setInterval(function() {
+        self.$.servicios.selectNext();
+        self.$.contacto.selectNext();
+      }, 4500);
+      setInterval(function() {
+        self.$.tarifas.selectNext();
+      }, 6000);
+    },
+    listeners: {
+      click: '_onClick'
+    },
+
+    _onClick: function(event) {
+      var target = event.target;
+      while (target !== this && !target._templateInstance) {
+        target = target.parentNode;
+      }
+
+      // configure the page animation
+      this.sharedElements = {
+        'hero': target,
+        'ripple': target
+      };
+      this.animationConfig['exit'][0].gesture = {
+        x: event.x || event.pageX,
+        y: event.y || event.pageY
+      };
+
+      this.fire('tile-click', {
+        tile: target,
+        data: target._templateInstance.item
+      });
+    }
+
+  });
+</script>
