@@ -12,7 +12,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <style>
     :host {
       display: block;
-      background: #000;
     }
 
     .tile {
@@ -29,12 +28,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     .tile.fotos {
       width: calc(100% / 2);
       height: calc(100% / 3 * 2);
-    }
-
-    neon-animated-pages,
-    iron-image {
-      width: 100%;
-      height: 100%;
     }
 
     .tile.tarifas {
@@ -63,96 +56,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       width: calc(100% / 2);
       height: calc(100% / 2);
     }
-
-    .tile.mapa google-map {
-      height: 100%;
-      width: 100%;
-    }
   </style>
 
   <template>
 
 
-    <div class="tile fotos">
-      <neon-animated-pages id="fotos" selected="0" entry-animation="slide-from-right-animation" exit-animation="slide-left-animation">
-        <neon-animatable>
-          <iron-image src="http://lorempixel.com/800/600/nature/1" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
-        </neon-animatable>
-        <neon-animatable>
-          <iron-image src="http://lorempixel.com/800/600/nature/2" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
-        </neon-animatable>
-        <neon-animatable>
-          <iron-image src="http://lorempixel.com/800/600/nature/3" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
-        </neon-animatable>
-        <neon-animatable>
-          <iron-image src="http://lorempixel.com/800/600/nature/4" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
-        </neon-animatable>
-        <neon-animatable>
-          <iron-image src="http://lorempixel.com/800/600/nature/5" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
-        </neon-animatable>
-      </neon-animated-pages>
+    <div class="tile fotos no-full">
+      <m71-fotos></m71-fotos>
     </div>
     <div class="tile tarifas">
-      <neon-animated-pages id="tarifas" selected="0" entry-animation="slide-from-right-animation" exit-animation="slide-left-animation">
-        <neon-animatable>
-          <iron-image src="http://lorempixel.com/800/600/people/1" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
-        </neon-animatable>
-        <neon-animatable>
-          <iron-image src="http://lorempixel.com/800/600/people/2" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
-        </neon-animatable>
-        <neon-animatable>
-          <iron-image src="http://lorempixel.com/800/600/people/3" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
-        </neon-animatable>
-        <neon-animatable>
-          <iron-image src="http://lorempixel.com/800/600/people/4" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
-        </neon-animatable>
-        <neon-animatable>
-          <iron-image src="http://lorempixel.com/800/600/people/5" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
-        </neon-animatable>
-      </neon-animated-pages>
+      <m71-tarifas></m71-tarifas>
     </div>
     <div class="tile servicios">
-      <neon-animated-pages id="servicios" selected="0" entry-animation="slide-from-right-animation" exit-animation="slide-left-animation">
-        <neon-animatable>
-          <iron-image src="http://lorempixel.com/800/600/people/1" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
-        </neon-animatable>
-        <neon-animatable>
-          <iron-image src="http://lorempixel.com/800/600/people/2" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
-        </neon-animatable>
-        <neon-animatable>
-          <iron-image src="http://lorempixel.com/800/600/people/3" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
-        </neon-animatable>
-        <neon-animatable>
-          <iron-image src="http://lorempixel.com/800/600/people/4" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
-        </neon-animatable>
-        <neon-animatable>
-          <iron-image src="http://lorempixel.com/800/600/people/5" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
-        </neon-animatable>
-      </neon-animated-pages>
+      <m71-servicios></m71-servicios>
     </div>
     <div class="tile contacto">
-      <neon-animated-pages id="contacto" selected="0" entry-animation="slide-from-right-animation" exit-animation="slide-left-animation">
-        <neon-animatable>
-          <iron-image src="http://lorempixel.com/800/600/people/1" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
-        </neon-animatable>
-        <neon-animatable>
-          <iron-image src="http://lorempixel.com/800/600/people/2" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
-        </neon-animatable>
-        <neon-animatable>
-          <iron-image src="http://lorempixel.com/800/600/people/3" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
-        </neon-animatable>
-        <neon-animatable>
-          <iron-image src="http://lorempixel.com/800/600/people/4" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
-        </neon-animatable>
-        <neon-animatable>
-          <iron-image src="http://lorempixel.com/800/600/people/5" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
-        </neon-animatable>
-      </neon-animated-pages>
+      <m71-contacto></m71-contacto>
     </div>
-    <div class="tile mapa">
-      <google-map latitude="-41.9383644" longitude="-71.5352607" fit-to-markers disableDefaultUi="true" zoom="13">
-        <google-map-marker latitude="-41.9383644" longitude="-71.5352607" draggable="false" title="Meridiano 71°"></google-map-marker>
-      </google-map>
+    <div class="tile mapa no-full">
+      <m71-ubicacion></m71-ubicacion>
     </div>
 
   </template>
@@ -189,30 +111,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     },
     ready: function() {
-      var self = this;
-      setInterval(function() {
-        self.$.fotos.selectNext();
-      }, 1500);
-      setInterval(function() {
-        self.$.contacto.selectNext();
-      }, 3000);
-      setInterval(function() {
-        self.$.servicios.selectNext();
-        self.$.contacto.selectNext();
-      }, 4500);
-      setInterval(function() {
-        self.$.tarifas.selectNext();
-      }, 6000);
+
     },
     listeners: {
-      click: '_onClick'
+      click: 'onClick'
     },
 
-    _onClick: function(event) {
+    onClick: function(event) {
       var target = event.target;
-      while (target !== this && !target._templateInstance) {
+
+      while (target !== this && !target.classList.contains('tile')) {
         target = target.parentNode;
       }
+
+      if (target.classList.contains('no-full'))
+        return;
 
       // configure the page animation
       this.sharedElements = {
@@ -226,7 +139,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       this.fire('tile-click', {
         tile: target,
-        data: target._templateInstance.item
+        data: {
+          color: 'red'
+        }
       });
     }
 

@@ -1,0 +1,80 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="m71-contacto">
+  <template>
+    <style>
+      :host {
+        display: block;
+        height: 100%;
+        width: 100%;
+      }
+
+      neon-animated-pages,
+      iron-image {
+        width: 100%;
+        height: 100%;
+      }
+
+      neon-animated-pages {
+        -webkit-filter: blur(2px) grayscale(0.7);
+        filter: blur(2px) grayscale(0.7);
+        transition: .3s;
+      }
+
+      neon-animated-pages:hover {
+        -webkit-filter: blur(0) grayscale(0);
+        filter: blur(0) grayscale(0);
+      }
+    </style>
+    <neon-animated-pages id="contacto" selected="0" entry-animation="fade-in-animation" exit-animation="fade-out-animation">
+      <neon-animatable>
+        <iron-image src="http://lorempixel.com/800/600/people/1" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
+      </neon-animatable>
+      <neon-animatable>
+        <iron-image src="http://lorempixel.com/800/600/people/2" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
+      </neon-animatable>
+      <neon-animatable>
+        <iron-image src="http://lorempixel.com/800/600/people/3" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
+      </neon-animatable>
+      <neon-animatable>
+        <iron-image src="http://lorempixel.com/800/600/people/4" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
+      </neon-animatable>
+      <neon-animatable>
+        <iron-image src="http://lorempixel.com/800/600/people/5" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
+      </neon-animatable>
+    </neon-animated-pages>
+  </template>
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'm71-contacto',
+
+        properties: {
+          foo: {
+            type: String,
+            value: 'm71-contacto',
+            notify: true
+          }
+        },
+        ready: function() {
+          var self = this;
+          setInterval(function() {
+            self.$.contacto.selectNext();
+          }, 3000);
+        }
+      });
+    })();
+  </script>
+</dom-module>
