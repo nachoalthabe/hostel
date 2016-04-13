@@ -35,6 +35,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         -webkit-filter: blur(0) grayscale(0);
         filter: blur(0) grayscale(0);
       }
+
+      #titulo {
+        @apply(--layout-horizontal);
+        @apply(--layout-center);
+        height: 100%;
+        position: relative;
+        top: -100%;
+      }
+
+      #titulo p {
+        display: block;
+        width: 100%;
+        text-align: center;
+        background: rgba(255, 255, 255, .5);
+        padding: 20px 0;
+      }
     </style>
     <neon-animated-pages id="contacto" selected="0" entry-animation="fade-in-animation" exit-animation="fade-out-animation">
       <neon-animatable>
@@ -53,6 +69,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <iron-image src="http://lorempixel.com/800/600/people/5" style="background-color: lightgray;" sizing="cover" preload fade></iron-image>
       </neon-animatable>
     </neon-animated-pages>
+    <div class="container" id="titulo">
+      <p>Contacto<br>y<br>Reservas</p>
+    </div>
   </template>
   <script>
     (function() {

@@ -25,29 +25,57 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         height: 100%;
       }
 
-      neon-animated-pages {
+      iron-image {
         -webkit-filter: blur(1px) grayscale(50%);
         filter: blur(1px) grayscale(50%);
         -webkit-transition: -webkit-filter .5s, filter .5s;
       }
 
-      neon-animated-pages:hover {
+      iron-image:hover {
         -webkit-filter: blur(0) grayscale(0);
         filter: blur(0) grayscale(0);
+      }
+
+      .titulo {
+        @apply(--layout-horizontal);
+        @apply(--layout-center);
+        height: 100%;
+        position: relative;
+        top: -100%;
+      }
+
+      .titulo p {
+        display: block;
+        width: 100%;
+        text-align: center;
+        background: rgba(255, 255, 255, .5);
+        padding: 20px 0;
       }
     </style>
     <neon-animated-pages id="servicios" selected="0" entry-animation="fade-in-animation" exit-animation="fade-out-animation">
       <neon-animatable>
         <iron-image style="background-color: lightgray;" src="../../images/servicios/desayunos.jpg" sizing="cover" preload fade></iron-image>
+        <div class="container titulo">
+          <p>Desayuno</p>
+        </div>
       </neon-animatable>
       <neon-animatable>
         <iron-image style="background-color: lightgray;" src="../../images/servicios/info.jpg" sizing="cover" preload fade></iron-image>
+        <div class="container titulo">
+          <p>Informacion<br>Turistica</p>
+        </div>
       </neon-animatable>
       <neon-animatable>
         <iron-image style="background-color: lightgray;" src="../../images/servicios/internet.jpg" sizing="cover" preload fade></iron-image>
+        <div class="container titulo">
+          <p>WiFi</p>
+        </div>
       </neon-animatable>
       <neon-animatable>
         <iron-image style="background-color: lightgray;" src="../../images/servicios/parilla.jpg" sizing="cover" preload fade></iron-image>
+        <div class="container titulo">
+          <p>Parilla</p>
+        </div>
       </neon-animatable>
     </neon-animated-pages>
   </template>
